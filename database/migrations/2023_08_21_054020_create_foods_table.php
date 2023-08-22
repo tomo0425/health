@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name', 50);
             $table->integer('price');
             $table->string('image')->nullable();
+            $table->string('shop', 50);
             $table->integer('carbohydrates')->nullable();
             $table->integer('proteins')->nullable();
             $table->integer('fats')->nullable();

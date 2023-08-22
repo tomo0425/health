@@ -12,6 +12,7 @@ class FoodController extends Controller
     {
         $searchWord = $request->input('search_word');
         $sortPrice = $request->input('sort_price');
+        $filterShop = $request->input('filter_shop');
         
         $query = Food::query();
     
@@ -25,6 +26,10 @@ class FoodController extends Controller
             $query->orderByDesc('price');
         } elseif ($sortPrice === 'ask') {
             $query->orderBy('price');
+        }
+        
+        if ($filterShop) {
+            $query->where('shop', $filterShop);
         }
         
         $foods = $query->get();
@@ -43,6 +48,7 @@ class FoodController extends Controller
         $foods = new Food();
         $foods->name = $request->foods['name'];
         $foods->price = $request->foods['price'];
+        $foods->shop = $request->foods['shop'];
         if ($request->file('image')->isValid()) {
             $path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
             $foods->image = $path;

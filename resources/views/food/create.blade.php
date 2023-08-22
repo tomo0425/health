@@ -29,6 +29,11 @@
                                     </div>
                                     
                                     <div class="row mb-3">
+                                        <h6>コンビニ</h6>
+                                        <textarea name="foods[shop]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
                                         <h6>炭水化物</h6>
                                         <textarea name="foods[carbohydrates]" style="width: 100%;" placeholder=""></textarea>
                                     </div>

@@ -14,6 +14,12 @@
         
             <div class="row">
                 <form method="get" action="{{ route('food.index') }}" class="col-md-8 offset-md-2 mb-3">
+                    <select name="filter_shop" class="form-control">
+                        <option value="">コンビニ</option>
+                        <option value="セブンイレブン">セブンイレブン</option>
+                        <option value="ファミリーマート">ファミリーマート</option>
+                        <option value="ローソン">ローソン</option>
+                    </select>
                     <select name="sort_price" class="form-control">
                         <option value="asc">価格</option>
                         <option value="asc">価格が少ない順</option>
