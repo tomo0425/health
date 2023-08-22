@@ -8,9 +8,16 @@ use Cloudinary;
 
 class FoodController extends Controller
 {
-    public function index(Food $food)
+    public function index(Request $request)
     {
-        $foods = Food::all();
+        $searchWord = $request->input('search_word');
+        
+        if ($searchWord) {
+            $foods = Food::where('name', 'LIKE', "%$searchWord%")->get();
+        } else {
+            $foods = Food::all();
+        }
+        
         return view('food.index')->with(['foods' => $foods]);
     }
     
