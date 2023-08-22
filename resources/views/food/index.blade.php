@@ -14,11 +14,16 @@
         
             <div class="row">
                 <form method="get" action="{{ route('food.index') }}" class="col-md-8 offset-md-2 mb-3">
-                    <div class="input-group">
+                    <select name="sort_price" class="form-control">
+                        <option value="asc">価格</option>
+                        <option value="asc">価格が少ない順</option>
+                        <option value="desc">価格が高い順</option>
+                    </select>
+                    <div class="">
                         <input type="text" name="search_word" id="search-keyword-input" placeholder="食品名" class="form-control">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-primary">検索</button>
-                        </div>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">検索</button>
                     </div>
                 </form>
             </div>

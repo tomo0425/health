@@ -11,12 +11,23 @@ class FoodController extends Controller
     public function index(Request $request)
     {
         $searchWord = $request->input('search_word');
+        $sortPrice = $request->input('sort_price');
         
+        $query = Food::query();
+    
         if ($searchWord) {
-            $foods = Food::where('name', 'LIKE', "%$searchWord%")->get();
-        } else {
-            $foods = Food::all();
+            $query->where('name', 'LIKE', "%$searchWord%");
         }
+        
+        if ($sortPrice === 'id') {
+            $query->orderBy('id'); 
+        } elseif ($sortPrice === 'desc') {
+            $query->orderByDesc('price');
+        } elseif ($sortPrice === 'ask') {
+            $query->orderBy('price');
+        }
+        
+        $foods = $query->get();
         
         return view('food.index')->with(['foods' => $foods]);
     }
