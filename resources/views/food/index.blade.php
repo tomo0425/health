@@ -13,6 +13,11 @@
             @foreach ($foods as $food)
                 {{ $food->name }}
                 {{ $food->price }}
+                {{ $food->carbohydrates }}
+                {{ $food->proteins }}
+                {{ $food->fats }}
+                {{ $food->vitamins }}
+                {{ $food->minerals }}
                 @if ($food->image)
                     <img src="{{ $food->image }}" alt="画像" style="width:250px; height:250px;">
                 @endif

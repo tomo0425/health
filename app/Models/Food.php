@@ -13,5 +13,10 @@ class Food extends Model
     'name',
     'price',
     'image',
+    'carbohydrates',
+    'proteins',
+    'fats',
+    'vitamins',
+    'minerals',
     ];
 }

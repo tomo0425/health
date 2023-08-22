@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('name', 50);
             $table->integer('price');
             $table->string('image')->nullable();
-            $table->integer('carbohydrates');
-            $table->integer('proteins');
-            $table->integer('fats');
-            $table->integer('vitamins');
-            $table->integer('minerals');
+            $table->integer('carbohydrates')->nullable();
+            $table->integer('proteins')->nullable();
+            $table->integer('fats')->nullable();
+            $table->integer('vitamins')->nullable();
+            $table->integer('minerals')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
