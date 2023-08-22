@@ -31,6 +31,11 @@ class FoodController extends Controller
         } else {
             dd('Invalid file');
         }
+        $foods->carbohydrates = $request->foods['carbohydrates'];
+        $foods->proteins = $request->foods['proteins'];
+        $foods->fats = $request->foods['fats'];
+        $foods->vitamins = $request->foods['vitamins'];
+        $foods->minerals = $request->foods['minerals'];
         $foods->save();
         return redirect('/food/index');
     }

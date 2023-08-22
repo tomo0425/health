@@ -29,6 +29,31 @@
                                     </div>
                                     
                                     <div class="row mb-3">
+                                        <h6>炭水化物</h6>
+                                        <textarea name="foods[carbohydrates]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <h6>タンパク質</h6>
+                                        <textarea name="foods[proteins]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <h6>脂質</h6>
+                                        <textarea name="foods[fats]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <h6>ビタミン</h6>
+                                        <textarea name="foods[vitamins]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <h6>ミネラル</h6>
+                                        <textarea name="foods[minerals]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
                                         <div class=" ">
                                             <h6>画像挿入</h6>
                                             <input type="file" name="image">
