@@ -10,51 +10,25 @@
     </head>
     <body>
         <div class="container py-5">
-            <h2 class="mb-4 text-center display-4 fw-bold">商品</h2>
+            <h1 class="mb-4 text-center display-4 fw-bold">商品</h1>
         
             <p class="text-center text-muted">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
         
-            <div class="row row-cols-1 row-cols-md-4 g-4 my-3">
-                <div class="col">
-                    <div class="card h-100" style="">
-                      <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage.png" class="card-img-top" alt="..." style="width: 100%; height:100%;">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="row">
+              @foreach ($foods as $food)
+              <div class="col-md-3 mb-4">
+                  <div class="card h-100" >
+                      <img src="{{ $food->image }}" class="card-img-top" alt="..." style="width: 100%; height: 200px;">
+                      <div class="card-body d-flex flex-column h-100">
+                          <h5 class="card-title">{{$food->name}}</h5>
+                          <p class="card-text">税込{{$food->price}}円</p>
+                          <div class="text-center mt-auto">
+                              <a href="#" class="btn btn-primary">詳細</a>
+                          </div>
                       </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="">
-                      <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                      </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="">
-                      <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                      </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="">
-                      <img src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                      </div>
-                    </div>
-                </div>
+                  </div>
+              </div>
+              @endforeach
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
