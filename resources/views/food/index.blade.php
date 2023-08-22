@@ -12,7 +12,16 @@
         <div class="container py-5">
             <h1 class="mb-4 text-center display-4 fw-bold">商品</h1>
         
-            <p class="text-center text-muted">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
+            <div class="row">
+                <form method="get" action="{{ route('food.index') }}" class="col-md-8 offset-md-2 mb-3">
+                    <div class="input-group">
+                        <input type="text" name="search_word" id="search-keyword-input" placeholder="食品名" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">検索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         
             <div class="row">
               @foreach ($foods as $food)
