@@ -37,6 +37,11 @@ class FoodController extends Controller
         return view('food.index')->with(['foods' => $foods]);
     }
     
+    public function show(Food $food)
+    {
+        return view('food.show')->with(['food' => $food]);
+    }
+    
     public function create()
     {
         $foods = Food::all();
