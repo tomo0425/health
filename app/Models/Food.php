@@ -14,7 +14,7 @@ class Food extends Model
     'price',
     'shop',
     'image',
-    'carories',
+    'calories',
     'proteins',
     'carbohydrates',
     'fats',

@@ -22,5 +22,5 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home'); 
 Route::get('/food/index', [FoodController::class, 'index'])->name('food.index');
 Route::get('/food/{food}', [FoodController::class, 'show'])->name('food.show');
-Route::get('/food/create', [FoodController::class, 'create'])->name('food.create');
-Route::post('/food', [FoodController::class,'store'])->name('store');
+Route::get('/foods/create', [FoodController::class, 'create'])->name('food.create');
+Route::post('/food', [FoodController::class,'store'])->name('food.store');

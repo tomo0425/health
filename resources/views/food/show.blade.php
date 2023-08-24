@@ -29,7 +29,7 @@
                                     <tbody>
                                         <tr>
                                             <th>栄養成分</th>
-                                            <td>炭水化物：{{ $food->carbohydrates }}g、たんぱく質：{{ $food->proteins }}g、脂質：{{ $food->fats }}g、無機物：{{ $food->minerals }}g</td>
+                                            <td>たんぱく質：{{ $food->proteins }}g、脂質：{{ $food->fats }}g、炭水化物：{{ $food->carbohydrates }}g、炭水化物：{{ $food->sugar }}g、食物繊維：{{ $food->fiber }}g、食塩：{{ $food->salt }}g</td>
                                         </tr>
                                     </tbody>
                                 </table>
