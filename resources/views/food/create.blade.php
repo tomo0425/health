@@ -35,7 +35,7 @@
                                     
                                     <div class="row mb-3">
                                         <h6>カロリー</h6>
-                                        <textarea name="foods[carories]" style="width: 100%;" placeholder=""></textarea>
+                                        <textarea name="foods[calories]" style="width: 100%;" placeholder=""></textarea>
                                     </div>
                                     
                                     <div class="row mb-3">
