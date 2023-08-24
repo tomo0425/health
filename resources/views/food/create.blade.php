@@ -34,8 +34,8 @@
                                     </div>
                                     
                                     <div class="row mb-3">
-                                        <h6>炭水化物</h6>
-                                        <textarea name="foods[carbohydrates]" style="width: 100%;" placeholder=""></textarea>
+                                        <h6>カロリー</h6>
+                                        <textarea name="foods[carories]" style="width: 100%;" placeholder=""></textarea>
                                     </div>
                                     
                                     <div class="row mb-3">
@@ -49,13 +49,24 @@
                                     </div>
                                     
                                     <div class="row mb-3">
-                                        <h6>ビタミン</h6>
-                                        <textarea name="foods[vitamins]" style="width: 100%;" placeholder=""></textarea>
+                                        <h6>炭水化物</h6>
+                                        <textarea name="foods[carbohydrates]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    
+                                    <div class="row mb-3">
+                                        <h6>糖質</h6>
+                                        <textarea name="foods[sugar]" style="width: 100%;" placeholder=""></textarea>
                                     </div>
                                     
                                     <div class="row mb-3">
-                                        <h6>ミネラル</h6>
-                                        <textarea name="foods[minerals]" style="width: 100%;" placeholder=""></textarea>
+                                        <h6>食物繊維</h6>
+                                        <textarea name="foods[fiber]" style="width: 100%;" placeholder=""></textarea>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                        <h6>食塩</h6>
+                                        <textarea name="foods[salt]" style="width: 100%;" placeholder=""></textarea>
                                     </div>
                                     
                                     <div class="row mb-3">

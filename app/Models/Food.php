@@ -14,10 +14,12 @@ class Food extends Model
     'price',
     'shop',
     'image',
-    'carbohydrates',
+    'carories',
     'proteins',
+    'carbohydrates',
     'fats',
-    'vitamins',
-    'minerals',
+    'sugar',
+    'fiber',
+    'salt',
     ];
 }
