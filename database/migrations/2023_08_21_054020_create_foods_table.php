@@ -20,12 +20,12 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('shop', 50);
             $table->integer('calories')->nullable();
-            $table->integer('proteins')->nullable();
-            $table->integer('fats')->nullable();
-            $table->integer('carbohydrates')->nullable();
-            $table->integer('sugar')->nullable();
-            $table->integer('fiber')->nullable();
-            $table->integer('salt')->nullable();
+            $table->float('proteins')->nullable();
+            $table->float('fats')->nullable();
+            $table->float('carbohydrates')->nullable();
+            $table->float('sugar')->nullable();
+            $table->float('fiber')->nullable();
+            $table->float('salt')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

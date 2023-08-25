@@ -23,6 +23,7 @@
                             <h1 class="mb-1 text-center text-lg font-weight-bold text-gray-800">{{ $food->name }}</h1>
                             <p class="my-2 text-center text-lg text-gray-800">価格：税込{{$food->price}}円</p>
                             <p class="my-2 text-center text-lg text-gray-800">メーカー：{{$food->shop}}</p>
+                            <p class="my-2 text-center text-lg text-gray-800">カロリー：{{$food->calories}}kcal</p>
                             <p class="my-2 text-center text-lg text-gray-800">口コミ：</p>
                             <div class=""> 
                                 <table class="table table-bordered"> 
@@ -36,9 +37,64 @@
                             </div>
                         </div>
                     </div>
+                　　<div class="row">
+                　　      <div class="col-9  mx-auto">
+                　　          <canvas id="nutritionChart" width="200" height="100"></canvas>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+                            <script>
+                                var nutritionData = {
+                                    labels: ["たんぱく質", "脂質", "炭水化物", "糖質", "食物繊維", "塩分"],
+                                    datasets: [
+                                        {
+                                            label: "食品の栄養素",
+                                            data: [
+                                                {{ $food->proteins }},
+                                                {{ $food->fats }},
+                                                {{ $food->carbohydrates }},
+                                                {{ $food->sugar }},
+                                                {{ $food->fiber }},
+                                                {{ $food->salt }}
+                                            ],
+                                            backgroundColor: [
+                                                "rgba(54, 162, 235, 0.2)",
+                                                "rgba(255, 206, 86, 0.2)",
+                                                "rgba(75, 192, 192, 0.2)",
+                                                "rgba(153, 102, 255, 0.2)",
+                                                "rgba(255, 159, 64, 0.2)",
+                                                "rgba(0, 128, 0, 0.2)" // Adjust the color for salt
+                                            ],
+                                            borderColor: [
+                                                "rgba(54, 162, 235, 1)",
+                                                "rgba(255, 206, 86, 1)",
+                                                "rgba(75, 192, 192, 1)",
+                                                "rgba(153, 102, 255, 1)",
+                                                "rgba(255, 159, 64, 1)",
+                                                "rgba(0, 128, 0, 1)" // Adjust the color for salt
+                                            ],
+                                            borderWidth: 1
+                                        }
+                                    ]
+                                };
+                                
+                                var ctx = document.getElementById('nutritionChart').getContext('2d');
+                                var nutritionChart = new Chart(ctx, {
+                                    type: 'bar', // グラフの種類をここで変更できます（例: 'line', 'pie' など）
+                                    data: nutritionData,
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
+                　　      </div>
+                　　</div>
                 </div>
             </div>
-        </div>    
+        </div>
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
