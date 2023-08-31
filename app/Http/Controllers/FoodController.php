@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use Cloudinary;
+use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
     public function index(Request $request)
     {
+        
         $searchWord = $request->input('search_word');
         $sortPrice = $request->input('sort_price');
         $filterShop = $request->input('filter_shop');
