@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Like;
+
 
 class Food extends Model
 {
@@ -22,4 +24,9 @@ class Food extends Model
     'fiber',
     'salt',
     ];
+    
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

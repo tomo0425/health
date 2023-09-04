@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Food;
 use Cloudinary;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Like;
 
 class FoodController extends Controller
 {
@@ -71,5 +72,45 @@ class FoodController extends Controller
         $foods->salt = $request->foods['salt'];
         $foods->save();
         return redirect('/food/index');
+    }
+    
+    public function like(Food $food)
+    {
+        if (Auth::check()) {
+            $user = Auth::user();
+            
+            // ユーザーがすでに食品をいいねしていないか確認
+            if (!$user->hasLiked($food)) {
+                // 'user_id' の値を指定して新しいいいねを作成
+                $like = new Like(['user_id' => $user->id, 'liked' => true]);
+                $food->likes()->save($like);
+                $user->likes()->save($like);
+            } else {
+                // ユーザーがすでにいいねしている場合、いいね解除ロジックを実装できます
+                // いいねレコードを削除するか、'liked' を false に設定できます
+            }
+        }
+    
+        return redirect()->back();
+    }
+
+    public function unlike(Food $food)
+    {
+        if (Auth::check()) {
+            $user = Auth::user();
+            
+            // ユーザーが食品をいいねしているか確認
+            if ($user->hasLiked($food)) {
+                // ユーザーのいいねレコードを取得
+                $like = $user->likes()->where('food_id', $food->id)->first();
+                
+                // いいねレコードを削除するか、'liked' を false に設定します
+                if ($like) {
+                    $like->delete(); // または 'liked' を false に設定します
+                }
+            }
+        }
+    
+        return redirect()->back();
     }
 }
