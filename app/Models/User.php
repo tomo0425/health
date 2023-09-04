@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Like;
 
 class User extends Authenticatable
 {
@@ -58,4 +59,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    
+    public function hasLiked(Food $food): bool
+    {
+        return $this->likes->contains('food_id', $food->id);
+    }
 }
