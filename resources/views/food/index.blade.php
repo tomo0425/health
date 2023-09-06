@@ -46,35 +46,32 @@
                 <div class="row">
                   　@foreach ($foods as $food)
                   　<div class="col-md-3 mb-4">
-                      　<div class="card h-110" >
+                      　<div class="card h-70" >
                             <img src="{{ $food->image }}" class="card-img-top" alt="..." style="width: 100%; height: 200px;">
                         　  <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{$food->name}}</h5>
                     　　          <p class="card-text">税込{{$food->price}}円</p>
                     　　          <div class="text-center mt-auto">
-                    　              <a href="#" class="btn btn-primary">詳細</a>
-                    　　          </div>
+                                    <!-- いいねボタン -->
+                                    @if (Auth::check())
+                                        @if (Auth::user()->hasLiked($food))
+                                            <form action="/food/{{ $food->id }}/like" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">いいね解除</button>
+                                            </form>
+                                        @else
+                                            <form action="/food/{{ $food->id }}/like" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">いいね</button>
+                                            </form>
+                                        @endif
+                                    @endif
+                                    <!-- いいねの数を表示 -->
+                                    <p class="mt-2">いいね数: {{ $food->likes->count() }}</p>
+                                </div>
                             </div>
                       　</div>
-                      　<div class="text-center">
-                            <!-- いいねボタン -->
-                            @if (Auth::check())
-                                @if (Auth::user()->hasLiked($food))
-                                    <form action="/food/{{ $food->id }}/like" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">いいね解除</button>
-                                    </form>
-                                @else
-                                    <form action="/food/{{ $food->id }}/like" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary">いいね</button>
-                                    </form>
-                                @endif
-                            @endif
-                            <!-- いいねの数を表示 -->
-                            <p class="mt-2">いいね数: {{ $food->likes->count() }}</p>
-                        </div>
                     </div>
                     @endforeach
                 </div>
