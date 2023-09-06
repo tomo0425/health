@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/foods/create', [FoodController::class, 'create'])->name('food.create');
     Route::post('/food', [FoodController::class,'store'])->name('food.store');
     Route::post('/food/{food}/like', [FoodController::class, 'like'])->name('food.like');
-    Route::delete('/food/{food}/unlike', [FoodController::class, 'unlike'])->name('food.unlike');
+    Route::delete('/food/{food}/like', [FoodController::class, 'unlike'])->name('food.unlike');
 });
 
 
