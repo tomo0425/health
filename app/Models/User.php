@@ -69,4 +69,9 @@ class User extends Authenticatable
     {
         return $this->likes->contains('food_id', $food->id);
     }
+    
+    public function tweets()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

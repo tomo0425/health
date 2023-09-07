@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -36,6 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/food', [FoodController::class,'store'])->name('food.store');
     Route::post('/food/{food}/like', [FoodController::class, 'like'])->name('food.like');
     Route::delete('/food/{food}/like', [FoodController::class, 'unlike'])->name('food.unlike');
+    Route::get('/posts/index', [PostController::class, 'index'])->name('posts.index');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 });
 
 
