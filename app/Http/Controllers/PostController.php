@@ -33,7 +33,7 @@ class PostController extends Controller
             $path = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
             $post->image = $path;
         }
-        $post->seibun = $request->post['title'];
+        $post->title = $request->post['title'];
         $post->text = $request->post['text'];
         $post->save();
         return redirect('/posts/index');
