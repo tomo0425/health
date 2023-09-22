@@ -15,7 +15,7 @@
         <body>
             <div class="container">
                 <h1 class="my-3">掲示板</h1>
-                <p>成分に関連する投稿をしよう！</p>
+                <p>商品に関連する投稿をしよう！</p>
                 <div class="footer">
                     <a href="/posts/create">投稿する</a>
                 </div>
