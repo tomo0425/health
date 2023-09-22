@@ -22,12 +22,24 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Healthee!') }}
                     </x-nav-link>
                 </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <x-nav-link href="/posts/index">
+                        口コミを探す
+                </x-nav-link>
+                <span class="mx-4"></span>
+                <x-nav-link href="/posts/">
+                    健康ランキング
+                </x-nav-link>
+                <span class="mx-4"></span>
+                <x-nav-link href="/food/index">
+                    食品一覧を見る
+                </x-nav-link>
+                <span class="mx-4"></span>
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
