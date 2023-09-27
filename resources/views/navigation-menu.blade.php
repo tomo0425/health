@@ -32,7 +32,7 @@
                         口コミを探す
                 </x-nav-link>
                 <span class="mx-4"></span>
-                <x-nav-link href="/posts/">
+                <x-nav-link href="/foods/rank">
                     健康ランキング
                 </x-nav-link>
                 <span class="mx-4"></span>
