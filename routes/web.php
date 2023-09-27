@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/food/index', [FoodController::class, 'index'])->name('food.index');
     Route::get('/food/{food}', [FoodController::class, 'show'])->name('food.show');
     Route::get('/foods/create', [FoodController::class, 'create'])->name('food.create');
+    Route::get('/foods/rank', [FoodController::class, 'rank'])->name('food.rank');
     Route::post('/food', [FoodController::class,'store'])->name('food.store');
     Route::post('/food/{food}/like', [FoodController::class, 'like'])->name('food.like');
     Route::delete('/food/{food}/like', [FoodController::class, 'unlike'])->name('food.unlike');
