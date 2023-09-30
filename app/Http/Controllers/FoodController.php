@@ -45,9 +45,10 @@ class FoodController extends Controller
         return view('food.show')->with(['food' => $food]);
     }
     
-    public function rank(Food $food)
+    public function rank()
     {
-        return view('food.rank')->with(['food' => $food]);
+        $foods = Food::all();
+        return view('food.rank')->with(['foods' => $foods]);
     }
     
     public function create()
