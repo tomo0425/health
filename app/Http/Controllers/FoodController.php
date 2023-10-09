@@ -47,7 +47,9 @@ class FoodController extends Controller
     
     public function rank()
     {
-        $foods = Food::all();
+        $foods = Food::withCount('likes')
+        ->orderByDesc('likes_count')
+        ->get();
         return view('food.rank')->with(['foods' => $foods]);
     }
     
