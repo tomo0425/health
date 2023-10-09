@@ -14,9 +14,12 @@
             </head>
             <body>
                 <div class="row">
+                    @php
+                      $rank = 1;
+                    @endphp
                   　@foreach ($foods as $food)
                   　<div class="col-md-3 mb-1">
-                  　 　　<span class="badge badge-primary ranking-badge">1</span>
+                  　 　　<span class="badge badge-primary ranking-badge">{{ $rank }}</span>
                       　<div class="card h-53">
                             <img src="{{ $food->image }}" class="card-img-top" alt="..." style="width: 100%; height: 200px;">
                         　  <div class="card-body d-flex flex-column">
@@ -25,6 +28,9 @@
                             </div>
                       　</div>
                     </div>
+                    @php
+                      $rank++;
+                    @endphp
                     @endforeach
                 </div>
                 
